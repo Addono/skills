@@ -1,0 +1,40 @@
+name: Sync Vendored Skills
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 4 * * 1"
+
+jobs:
+  sync:
+    name: Refresh vendored snapshots
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v6.0.2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Refresh vendored skills
+        run: python3 scripts/sync-vendored-skills.py --update-pinned-refs
+
+      - name: Validate skill structure
+        run: bash scripts/validate-skills.sh
+
+      - name: Open pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: automation/sync-vendored-skills
+          delete-branch: true
+          commit-message: "chore: sync vendored skills"
+          title: "chore: sync vendored skills"
+          body: |
+            ## Summary
+            - update pinned upstream refs in `vendored-skills.json`
+            - regenerate vendored skill snapshots and attribution artifacts
+            - refresh `THIRD_PARTY_NOTICES.md`

@@ -58,6 +58,12 @@ for skill_dir in "$SKILLS_DIR"/*/; do
   echo "OK    [$skill_name]: SKILL.md valid ($line_count lines)"
 done
 
+if ! python3 "$(cd "$(dirname "$0")" && pwd)/sync-vendored-skills.py" --check; then
+  ERRORS=$((ERRORS + 1))
+else
+  echo "OK    [vendored-skills]: generated vendored files are current"
+fi
+
 if [ "$ERRORS" -gt 0 ]; then
   echo ""
   echo "Validation failed with $ERRORS error(s)."

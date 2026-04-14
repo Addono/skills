@@ -11,6 +11,7 @@ It is compatible with [skills.sh](https://skills.sh) and [microsoft/apm](https:/
 - `SKILL.md` must include YAML frontmatter with at least `name` and `description`.
 - Keep `SKILL.md` under **200 lines**. Move longer content to `references/` files.
 - Upstream third-party skills should be vendored into this repo as full snapshots so installers receive the complete skill contents.
+- Track vendored third-party skills in `vendored-skills.json` and regenerate them with `python3 scripts/sync-vendored-skills.py`.
 
 ## Skill Structure
 
@@ -28,6 +29,7 @@ skills/
 - Use the `create-skill` skill from `skills/create-skill/` when creating or updating skills.
 - Use [conventional commits](https://www.conventionalcommits.org/): `feat:`, `fix:`, `docs:`, `chore:`, etc.
 - Run CI locally before pushing: `bash scripts/validate-skills.sh`
+- Refresh vendored snapshots after manifest changes: `python3 scripts/sync-vendored-skills.py`
 
 ## References
 

@@ -11,7 +11,7 @@
 
 Skills are modular, self-contained packages that give AI coding agents specialized knowledge, workflows, and automation. Think of them as "onboarding guides" for agents — loaded on demand, only when relevant.
 
-This repo houses both **novel skills** crafted here and **vendored upstream snapshots** of useful skills so installers like `apm` and `npx skills` receive complete skill directories.
+This repo houses both **novel skills** crafted here and **vendored upstream snapshots** of useful skills so installers like `apm` and `npx skills` receive complete skill directories. Vendored skills are generated from `/vendored-skills.json` by `python3 scripts/sync-vendored-skills.py`, which also writes attribution metadata and notices.
 
 ## Available Skills
 
@@ -38,10 +38,10 @@ Intelligently merge Dependabot PRs with full CI awareness and automatic triage o
 
 ### 🛠️ create-skill
 
-A meta-skill for creating new skills. The full upstream skill is vendored into this repository so package installers receive the entire skill directory, including `references/` content.
+A meta-skill for creating new skills. The full upstream skill is vendored into this repository from a pinned snapshot so package installers receive the entire skill directory, including `references/` content.
 
 **Source:** [siviter-xyz/dot-agent](https://github.com/siviter-xyz/dot-agent/tree/main/skills/create-skill)
-**Snapshot details:** [skills/create-skill/README.md](skills/create-skill/README.md)
+**Attribution:** [skills/create-skill/ATTRIBUTION.md](skills/create-skill/ATTRIBUTION.md)
 
 [→ View skill](skills/create-skill/SKILL.md)
 
@@ -88,7 +88,8 @@ Contributions are welcome! Please:
 1. Use [conventional commits](https://www.conventionalcommits.org/) (`feat:`, `fix:`, `docs:`, etc.)
 2. Follow the [Agent Skills specification](https://agentskills.io/specification)
 3. Keep `SKILL.md` under 200 lines (use `references/` for longer content)
-4. Open a PR — CI will validate your skill automatically
+4. Refresh vendored snapshots with `python3 scripts/sync-vendored-skills.py` after changing `/vendored-skills.json`
+5. Open a PR — CI will validate your skill automatically
 
 See [AGENTS.md](AGENTS.md) for guidance on working in this repo with an AI agent.
 
