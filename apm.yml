@@ -1,13 +1,8 @@
 name: addono-skills
 version: 1.0.0
 description: >
-  A curated catalog of AI agent skills — novel skills and curated external references
-  for automating common development workflows.
+  A curated catalog of AI agent skills — novel skills and vendored upstream
+  skill snapshots for automating common development workflows.
 author: Addono
 license: Apache-2.0
 homepage: https://github.com/Addono/skills
-
-dependencies:
-  apm:
-    # External skill: meta-skill for creating new skills
-    - siviter-xyz/dot-agent/skills/create-skill
