@@ -1,4 +1,4 @@
-# �� Addono Agent Skills
+# Addono Agent Skills
 
 > A curated catalog of AI agent skills — plug-and-play capabilities that supercharge your coding agents.
 
