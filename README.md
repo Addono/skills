@@ -62,7 +62,11 @@ apm install Addono/skills
 ### Using skills.sh / npx
 
 ```bash
+# Add this package to the current project
 npx skills add Addono/skills
+
+# Install for all projects on this machine
+npx skills add Addono/skills --global
 ```
 
 ### Manual
