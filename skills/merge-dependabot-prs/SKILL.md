@@ -52,7 +52,7 @@ Separate PRs into:
 For each green PR, merge in order (oldest first to reduce rebase churn):
 
 ```bash
-gh pr merge <number> --repo <owner/repo> --merge --auto
+gh pr merge <number> --repo <owner/repo> --merge
 ```
 
 If the merge is blocked by branch protection (e.g. requires admin), use:
