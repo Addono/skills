@@ -15,6 +15,25 @@ This repo houses both **novel skills** crafted here and **curated references** t
 
 ## Available Skills
 
+### 📝 documentation-writer
+
+Create or refine technical documentation with a Diátaxis-based workflow that fits tutorials, how-to guides, references, and explanations.
+
+**Use when:**
+- You need to draft new developer or user documentation
+- Existing docs need a clearer structure or better audience targeting
+- A documentation review should classify content by Diátaxis document type
+
+**Key capabilities:**
+- Clarifies audience, goal, and scope before drafting
+- Chooses the correct Diátaxis document type for the task
+- Produces structured Markdown for tutorials, how-to guides, reference docs, or explanations
+- Reuses repository terminology and style without copying blindly
+
+[→ View skill](skills/documentation-writer/SKILL.md)
+
+---
+
 ### 🔀 merge-dependabot-prs
 
 Intelligently merge Dependabot PRs with full CI awareness and automatic triage of blockers.
