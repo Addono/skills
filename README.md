@@ -1,4 +1,4 @@
-# 🤖 Addono Agent Skills
+# �� Addono Agent Skills
 
 > A curated catalog of AI agent skills — plug-and-play capabilities that supercharge your coding agents.
 
@@ -11,7 +11,7 @@
 
 Skills are modular, self-contained packages that give AI coding agents specialized knowledge, workflows, and automation. Think of them as "onboarding guides" for agents — loaded on demand, only when relevant.
 
-This repo houses both **novel skills** crafted here and **curated references** to externally hosted skills worth using.
+This repo houses both **novel skills** crafted here and **vendored upstream snapshots** of useful skills so installers like `apm` and `npx skills` receive complete skill directories.
 
 ## Available Skills
 
@@ -36,12 +36,12 @@ Intelligently merge Dependabot PRs with full CI awareness and automatic triage o
 
 ---
 
-### 🛠️ create-skill *(external)*
+### 🛠️ create-skill
 
-A meta-skill for creating new skills. Guides agents through best practices: SKILL.md structure, progressive disclosure, frontmatter, and bundled resources.
+A meta-skill for creating new skills. The full upstream skill is vendored into this repository so package installers receive the entire skill directory, including `references/` content.
 
 **Source:** [siviter-xyz/dot-agent](https://github.com/siviter-xyz/dot-agent/tree/main/skills/create-skill)
-**Install:** `https://skills.sh/siviter-xyz/dot-agent/create-skill`
+**Snapshot details:** [skills/create-skill/README.md](skills/create-skill/README.md)
 
 [→ View skill](skills/create-skill/SKILL.md)
 

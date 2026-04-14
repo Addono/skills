@@ -10,8 +10,7 @@ It is compatible with [skills.sh](https://skills.sh) and [microsoft/apm](https:/
 - Every skill lives in `skills/<skill-name>/` and **must** have a `SKILL.md`.
 - `SKILL.md` must include YAML frontmatter with at least `name` and `description`.
 - Keep `SKILL.md` under **200 lines**. Move longer content to `references/` files.
-- External skills (hosted elsewhere) are catalogued here with a thin `SKILL.md` that describes the
-  external source and usage, rather than duplicating the full content.
+- Upstream third-party skills should be vendored into this repo as full snapshots so installers receive the complete skill contents.
 
 ## Skill Structure
 
@@ -26,7 +25,7 @@ skills/
 
 ## Working in This Repo
 
-- Use the `create-skill` skill (external, via `skills/create-skill/`) when creating or updating skills.
+- Use the `create-skill` skill from `skills/create-skill/` when creating or updating skills.
 - Use [conventional commits](https://www.conventionalcommits.org/): `feat:`, `fix:`, `docs:`, `chore:`, etc.
 - Run CI locally before pushing: `bash scripts/validate-skills.sh`
 
