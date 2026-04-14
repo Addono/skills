@@ -1,0 +1,18 @@
+# APM installed packages
+apm_modules/
+
+# Node / npx artifacts
+node_modules/
+.npm/
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/settings.json
+.idea/
+
+# Temporary files
+tmp/
+*.tmp
