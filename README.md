@@ -47,6 +47,17 @@ A meta-skill for creating new skills. The full upstream skill is vendored into t
 
 ---
 
+### 📝 documentation-writer
+
+A Diátaxis-oriented documentation skill for drafting software docs with a clear document type, audience, scope, and reviewable outline before writing.
+
+**Source:** [github/awesome-copilot](https://github.com/github/awesome-copilot/tree/main/skills/documentation-writer)
+**Attribution:** [skills/documentation-writer/ATTRIBUTION.md](skills/documentation-writer/ATTRIBUTION.md)
+
+[→ View skill](skills/documentation-writer/SKILL.md)
+
+---
+
 ## Installation
 
 ### Using APM (recommended)
