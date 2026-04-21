@@ -27,7 +27,7 @@ jobs:
         run: bash scripts/validate-skills.sh
 
       - name: Open pull request
-        uses: peter-evans/create-pull-request@v7
+        uses: peter-evans/create-pull-request@v8
         with:
           branch: automation/sync-vendored-skills
           delete-branch: true
