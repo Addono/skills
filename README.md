@@ -36,7 +36,7 @@ Intelligently merge Dependabot PRs with full CI awareness and automatic triage o
 
 ---
 
-### ⚙️ repository-settings
+### ⚙️ probot-settings
 
 Create or update `.github/settings.yml` for the Repository Settings GitHub App / Probot Settings
 app using live repository data, safe defaults, and Addono-flavoured examples.
@@ -52,7 +52,7 @@ app using live repository data, safe defaults, and Addono-flavoured examples.
 - Encodes upstream gotchas for labels, branch protection, environments, and org-only permissions
 - Calls out security implications and review safeguards for sensitive changes
 
-[→ View skill](skills/repository-settings/SKILL.md)
+[→ View skill](skills/probot-settings/SKILL.md)
 
 ---
 
@@ -117,7 +117,7 @@ Use the merge-dependabot-prs skill across all repos in the Addono org.
 ```
 
 ```
-Use the repository-settings skill to create a .github/settings.yml for this repo based on the
+Use the probot-settings skill to create a .github/settings.yml for this repo based on the
 current GitHub settings and Addono conventions.
 ```
 

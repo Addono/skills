@@ -1,5 +1,5 @@
 ---
-name: repository-settings
+name: probot-settings
 description: >
   Create or update `.github/settings.yml` for the Repository Settings GitHub App /
   Probot Settings app. Research the target repo, preserve existing intent, and apply
@@ -7,7 +7,7 @@ description: >
   "probot settings", "settings app", "repository-settings app".
 ---
 
-# Repository Settings
+# Probot Settings
 
 Use this skill when a repository needs a new or updated `.github/settings.yml` managed by the
 Repository Settings GitHub App (`repository-settings/app`) or the older Probot Settings docs.
