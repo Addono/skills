@@ -19,7 +19,7 @@ This repository includes vendored third-party skills generated from pinned upstr
 - Installed path: `skills/documentation-writer`
 - Upstream repository: `github/awesome-copilot`
 - Upstream path: `skills/documentation-writer`
-- Pinned commit: `1168a39abaed3558ac5b65ac55145721976e37a3`
+- Pinned commit: `b1a00457c0b8794243883f387e7de71e88800e3e`
 - Tracking branch: `main`
 - License: `MIT`
 - Copyright owner: `GitHub, Inc.`
