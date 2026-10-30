@@ -15,24 +15,24 @@ This repo houses both **novel skills** crafted here and **vendored upstream snap
 
 ## Available Skills
 
-### 🔀 merge-dependabot-prs
+### 🔀 merge-dependency-prs
 
-Intelligently merge Dependabot PRs with full CI awareness and automatic triage of blockers.
+Safely process and merge automated dependency bump PRs across all tools (Dependabot, Renovate, Depfu, etc.) with CI regression monitoring and blocker tracking in PR comments.
 
 **Use when:**
-- You want to clear a backlog of Dependabot PRs safely
-- CI is green but you haven't found time to click "Merge"
-- Some Dependabot PRs are failing and you want a clear report of why
+- You want to clear a backlog of dependency bump PRs from any bot safely
+- CI is green and PRs are ready to merge
+- You want blocker decisions documented directly in PR comments for future re-evaluation
+- You want to verify base branch CI to guard against post-merge regressions
 
 **Key capabilities:**
-- Auto-detects the target repo from `git remote` / `gh` — no manual repo specification required
-- Supports single repo, all repos for a user, or all repos in an org
-- Merges all green PRs (with admin merge fallback when needed)
-- Distinguishes trivial fixes (version bumps, simple API renames) from non-trivial ones
-- Fixes trivial breaking changes automatically, then merges
-- Reports a clean summary table for non-trivial blockers
+- Multi-bot support: works with Dependabot, Renovate, Depfu, and labeled dependency PRs
+- Baseline and post-merge regression detection on the default branch
+- Merges green PRs in safe order (oldest first) and triggers bot rebases
+- Documents structured blocker reasons and re-evaluation criteria on unmerged PRs
+- Reports a clean summary of merged PRs, documented blockers, and base branch status
 
-[→ View skill](skills/merge-dependabot-prs/SKILL.md)
+[→ View skill](skills/merge-dependency-prs/SKILL.md)
 
 ---
 
@@ -109,11 +109,11 @@ Clone or copy any `skills/<name>/` directory into your project. The `SKILL.md` f
 Once installed, your agent will automatically pick up relevant skills. You can also invoke them explicitly:
 
 ```
-Use the merge-dependabot-prs skill to clean up all green Dependabot PRs in this repo.
+Use the merge-dependency-prs skill to clean up all green dependency PRs in this repo.
 ```
 
 ```
-Use the merge-dependabot-prs skill across all repos in the Addono org.
+Use the merge-dependency-prs skill across all repos in the Addono org.
 ```
 
 ```
