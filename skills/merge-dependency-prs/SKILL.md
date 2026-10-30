@@ -1,16 +1,14 @@
 ---
 name: merge-dependency-prs
 description: >
-  Safely merge automated dependency bump PRs across all tools (Dependabot, Renovate, Depfu, etc.):
-  discover PRs, approve PRs when required by branch protection, merge green ones, track blocker
-  decisions/re-evaluations via PR comments, and monitor post-merge base branch CI for regressions.
+  Safely merge automated dependency bump PRs across all tools (Dependabot, Renovate, Depfu, etc.).
   Triggers on: "merge dependency PRs", "merge dependencies", "clean up dependencies",
   "handle renovate PRs", "merge depfu PRs", "merge dependency bumps".
 ---
 
 # Merge Dependency PRs
 
-Safely process and merge automated dependency bump PRs from any bot (Dependabot, Renovate, Depfu, etc.), approve PRs where required by branch protection, document blocker reasons in PR comments for future re-evaluation, and verify that merges do not cause base branch regressions.
+Safely process and merge automated dependency bump PRs from any bot (Dependabot, Renovate, Depfu, etc.), document blocker reasons in PR comments for future re-evaluation, and verify that merges do not cause base branch regressions.
 
 ## Step 0 — Determine Scope & Baseline CI
 
