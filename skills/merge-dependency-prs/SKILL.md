@@ -1,11 +1,9 @@
 ---
 name: merge-dependency-prs
 description: >
-  Safely merge automated dependency bump PRs across all tools (Dependabot, Renovate, Depfu, etc.):
-  discover PRs, merge green ones, track blocker decisions/re-evaluations via PR comments, and
-  monitor post-merge base branch CI for regressions.
-  Triggers on: "merge dependency PRs", "clean up dependencies", "handle renovate PRs",
-  "merge depfu PRs", "merge dependency bumps".
+  Safely merge automated dependency bump PRs across all tools (Dependabot, Renovate, Depfu, etc.).
+  Triggers on: "merge dependency PRs", "merge dependencies", "clean up dependencies",
+  "handle renovate PRs", "merge depfu PRs", "merge dependency bumps".
 ---
 
 # Merge Dependency PRs
@@ -37,25 +35,39 @@ Identify PRs authored by dependency bots or labeled as dependencies:
 ```bash
 # Dependabot
 gh pr list --repo <owner/repo> --author app/dependabot --state open \
-  --json number,title,headRefName,statusCheckRollup,mergeable,baseRefName
+  --json number,title,headRefName,statusCheckRollup,mergeable,baseRefName,reviewDecision
 
 # Renovate
 gh pr list --repo <owner/repo> --author app/renovate --state open \
-  --json number,title,headRefName,statusCheckRollup,mergeable,baseRefName
+  --json number,title,headRefName,statusCheckRollup,mergeable,baseRefName,reviewDecision
 
 # By common labels/metadata fallback:
 gh pr list --repo <owner/repo> --label "dependencies" --state open \
-  --json number,title,headRefName,statusCheckRollup,mergeable,baseRefName,author
+  --json number,title,headRefName,statusCheckRollup,mergeable,baseRefName,author,reviewDecision
 ```
 
 Classify PRs into:
-- **Green**: checks passed, mergeable, no blocking reviews.
+- **Green**: checks passed, mergeable, no blocking reviews (e.g. `CHANGES_REQUESTED`). If branch protection requires approval (`reviewDecision: "REVIEW_REQUIRED"`), the PR is still eligible to be treated as green — the agent is allowed to approve it in Step 2.
 - **Failing / Pending**: tests failed or checks still in progress.
-- **Blocked**: merge conflicts, peer dependency locks, or breaking API changes.
+- **Blocked**: merge conflicts, peer dependency locks, breaking API changes, or non-bot blocking reviews.
 
 ## Step 2 — Merge Green PRs in Safe Sequence
 
-Merge oldest green PRs first to minimize rebasing overhead:
+Merge oldest green PRs first to minimize rebasing overhead.
+
+### PR Approvals (When Required by Repository Rules)
+
+Some repositories enforce branch protection requiring PR approval before merging. **The agent is explicitly allowed to approve PRs in order to get them merged**, and this approval counts towards satisfying the repository requirement.
+
+Before merging, if the PR requires review approval (`reviewDecision: "REVIEW_REQUIRED"`):
+
+```bash
+gh pr review <number> --repo <owner/repo> --approve --body "Approved dependency bump"
+```
+
+Only approve PRs that are verified green (passing all status checks with no unresolved regressions or conflicts).
+
+### Merging
 
 ```bash
 gh pr merge <number> --repo <owner/repo> --merge
