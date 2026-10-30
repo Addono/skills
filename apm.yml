@@ -6,3 +6,6 @@ description: >
 author: Addono
 license: Apache-2.0
 homepage: https://github.com/Addono/skills
+dependencies:
+  apm:
+    - ./.apm/instructions/skills.instructions.md
