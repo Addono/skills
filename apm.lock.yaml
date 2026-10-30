@@ -1,0 +1,29 @@
+lockfile_version: '1'
+apm_version: 0.35.0
+dependencies:
+- repo_url: _local/skills.instructions.md
+  name: skills.instructions.md
+  version: 1.0.0
+  package_type: apm_package
+  deployed_files:
+  - .github/instructions/skills.instructions.md
+  deployed_file_hashes:
+    .github/instructions/skills.instructions.md: sha256:b4769179bb3f2c71b0fdb0d3a9a17845e49b07ecd4060d279b6fa921dbfc3930
+  source: local
+  local_path: ./.apm/instructions/skills.instructions.md
+  content_hash: sha256:b8ffb9e7cf6b3d151beb39ef0ed59f4d241ddc34233a433e3007c3f70dfeafe5
+deployments:
+- kind: project-relative
+  target: copilot
+  value: .github/instructions/skills.instructions.md
+  runtime: null
+  scope: project
+  owners:
+  - ./.apm/instructions/skills.instructions.md
+  - .
+  active_owner: ./.apm/instructions/skills.instructions.md
+  content_hash: sha256:b4769179bb3f2c71b0fdb0d3a9a17845e49b07ecd4060d279b6fa921dbfc3930
+local_deployed_files:
+- .github/instructions/skills.instructions.md
+local_deployed_file_hashes:
+  .github/instructions/skills.instructions.md: sha256:b4769179bb3f2c71b0fdb0d3a9a17845e49b07ecd4060d279b6fa921dbfc3930

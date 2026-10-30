@@ -9,6 +9,7 @@ It is compatible with [skills.sh](https://skills.sh) and [microsoft/apm](https:/
 
 - Every skill lives in `skills/<skill-name>/` and **must** have a `SKILL.md`.
 - `SKILL.md` must include YAML frontmatter with at least `name` and `description`.
+- The `description` field is used exclusively for determining when to use the skill and must stay short; do not describe implementation details or how the skill achieves its goal.
 - Keep `SKILL.md` under **200 lines**. Move longer content to `references/` files.
 - Upstream third-party skills should be vendored into this repo as full snapshots so installers receive the complete skill contents.
 - Track vendored third-party skills in `vendored-skills.json` and regenerate them with `python3 scripts/sync-vendored-skills.py`.
