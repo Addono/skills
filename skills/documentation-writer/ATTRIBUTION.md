@@ -6,9 +6,9 @@ This directory is generated from a pinned upstream snapshot by `scripts/sync-ven
 
 - Repository: `github/awesome-copilot`
 - Path: `skills/documentation-writer`
-- Pinned commit: `1168a39abaed3558ac5b65ac55145721976e37a3`
+- Pinned commit: `61fa1fa8fcc63d6dbd2f07a75aeb8e214df5acfb`
 - Tracking branch: `main`
-- Source snapshot: https://github.com/github/awesome-copilot/tree/1168a39abaed3558ac5b65ac55145721976e37a3/skills/documentation-writer
+- Source snapshot: https://github.com/github/awesome-copilot/tree/61fa1fa8fcc63d6dbd2f07a75aeb8e214df5acfb/skills/documentation-writer
 
 ## License
 
